@@ -21,7 +21,7 @@ public class NameLoad {
                 )));
     }
 
-    public boolean validate (String name) {
+    public boolean validate(String name) {
         if (!name.contains("=")) {
             throw new IllegalArgumentException(
                     "this name: %s does not contain the symbol '='".formatted(name));
