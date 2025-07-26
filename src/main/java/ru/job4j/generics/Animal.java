@@ -20,7 +20,9 @@ public class Animal {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Animal animal = (Animal) o;
         return numberOfLimbs == animal.numberOfLimbs;
     }
@@ -32,8 +34,8 @@ public class Animal {
 
     @Override
     public String toString() {
-        return getClass().getSimpleName() + "{" +
-                "Количество конечностей " + numberOfLimbs +
-                '}';
+        return getClass().getSimpleName() + "{"
+                + "Количество конечностей " + numberOfLimbs
+                + '}';
     }
 }
