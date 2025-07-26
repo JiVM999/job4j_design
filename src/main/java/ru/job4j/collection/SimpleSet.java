@@ -29,7 +29,6 @@ public class SimpleSet {
     }
 
     private void grow() {
-
         int length = container.length * 2;
         container = new String[length];
     }
