@@ -46,7 +46,7 @@ public class SimpleLinkedList<E> implements SimpleLinked<E> {
                 if (mod != modCount) {
                     throw new ConcurrentModificationException();
                 }
-                return size != 0 && cursor != null;
+                return cursor != null;
             }
 
             @Override
