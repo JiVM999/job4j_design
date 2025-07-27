@@ -10,17 +10,18 @@ public class SimpleQueue<T> {
     private int sizeOut;
 
     public T poll() {
-        if (sizeOut == 0 && sizeIn == 0) {
+        if (sizeIn == 0) {
             throw new NoSuchElementException("Queue is empty");
         }
-        for (int i = 0; i < sizeIn; i++) {
-            output.push(input.pop());
+        if (sizeOut == 0) {
+            while (sizeIn > 0) {
+                output.push(input.pop());
+                sizeOut++;
+                sizeIn--;
+            }
         }
         T value = output.pop();
-        sizeIn--;
-        for (int i = 0; i < sizeIn; i++) {
-            input.push(output.pop());
-        }
+        sizeOut--;
         return value;
     }
 
