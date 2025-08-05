@@ -15,7 +15,7 @@ public class NonCollisionMap<K, V> implements SimpleMap<K, V> {
 
     @Override
     public boolean put(K key, V value) {
-        if ((double) count / capacity >= 0.75) {
+        if ((double) count / capacity >= LOAD_FACTOR) {
             expand();
         }
         MapEntry<K, V> entry = new MapEntry<>(key, value);
